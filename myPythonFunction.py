@@ -1,4 +1,5 @@
-import random, os
+import random
+import os
 
 fileName = 'userScore.txt'
 tmpFile = 'userScore.tmp'
@@ -8,23 +9,23 @@ try:
     def getUserPoint(userName):
         f = open(fileName, 'r')
         results = f.readlines()
-    
+
         counter = False
-        
+
         for result in results:
             splitado = result.split(',')
             for innerResult in splitado:
-                if counter == True:
-                    print('Score: ',innerResult)
+                if counter is True:
+                    print('Score: ', innerResult)
                     break
 
                 if innerResult == userName:
                     counter = True
                     continue
-            if counter == True:
+            if counter is True:
                 break
-                
-        if counter == False:
+
+        if counter is False:
             print("Sorry, name not found :( ")
 
         f.close()
@@ -36,40 +37,40 @@ try:
         counter = False
 
         newResult = 0
-        
+
         for result in results:
             splitado = result.split(',')
             for innerResult in splitado:
-                if counter == True:
+                if counter is True:
                     newResult = int(innerResult)
                     break
 
                 if innerResult == userName:
                     counter = True
                     continue
-            if counter == True:
+            if counter is True:
                 break
 
-        return newResult    
+        return newResult
 
-        if counter == False:
+        if counter is False:
             print("Sorry, name not found :( ")
 
         f.close()
 
     def updateUserPoints(newUser, userName, score):
-        if newUser == True:
+        if newUser is True:
             f = open(fileName, 'a')
             model = "\n{}, {}"
-            string = model.format(userName,score)
+            string = model.format(userName, score)
             f.write(string)
             f.close()
         else:
             inputFile = open(fileName, "r")
-            outputFile = open(tmpFile,"a")
+            outputFile = open(tmpFile, "a")
 
             lines = inputFile.readlines()
-            
+
             arrayUsers = []
             for line in lines:
                 user = line.split(',')
@@ -77,7 +78,7 @@ try:
 
             for idx, users in enumerate(arrayUsers):
                 if arrayUsers[idx][0] == userName:
-                    arrayUsers[idx][1] = str(score) #+ '\n'
+                    arrayUsers[idx][1] = str(score)
 
                 string = "{}, {}\n"
                 stringLast = "{}, {}"
@@ -89,18 +90,18 @@ try:
                 userArray = userArray.strip()
                 scoreArray = scoreArray.strip()
                 if (idx + 1) < arrayLenght:
-                    outputFile.write(string.format(userArray,scoreArray))
+                    outputFile.write(string.format(userArray, scoreArray))
                 else:
-                    outputFile.write(stringLast.format(userArray,scoreArray))
-            
+                    outputFile.write(stringLast.format(userArray, scoreArray))
+
             inputFile.close()
             outputFile.close()
             os.remove(fileName)
-            os.rename(tmpFile,fileName)
+            os.rename(tmpFile, fileName)
 
     def showAllScore():
         f = open(fileName, 'r')
-        stringScores ='''{}-{}-{}'''
+        stringScores = '''{}-{}-{}'''
 
         lines = f.readlines()
         arrayUsers = []
