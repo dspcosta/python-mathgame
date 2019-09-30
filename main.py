@@ -1,4 +1,5 @@
 import myPythonFunction
+import mathGame
 
 try:
 
@@ -31,7 +32,8 @@ try:
         1) Search for a Score from a Specific User Name
         2) Update a Score for a specific User Name
         3) Show All Scores
-        4) Quit
+        4) New Math Game!!!
+        5) Quit
         '''
         )
         optionSelect = int(input("Insert option:"))
@@ -53,6 +55,8 @@ try:
                 myPythonFunction.updateUserPoints(newUser, searchUser, scoreUpdate)
         elif optionSelect == 3:
             myPythonFunction.showAllScore()
+        elif optionSelect == 4:
+            mathGame.mathGame()
         else:
             finishProgram = True
             print('Thank you, see you soon!')
