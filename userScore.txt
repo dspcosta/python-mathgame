@@ -2,7 +2,7 @@ Ann, 100
 Benny, 102
 Carol, 214
 Darren, 129
-Daniel, 21
+Daniel, 121
 Damiao, 55
 Jessica, 456
 Vanessa, 900
@@ -11,11 +11,5 @@ Camile, 5555
 Priscila, 25
 Fatima, 25
 Gorying, 262626
-Daniel Costa, 13
 Jeane, 15
 Brandon, 25000
-Vrim, 500
-Vrum, 0
-Test, 21
-Testing, 10
-Testeee, 12
