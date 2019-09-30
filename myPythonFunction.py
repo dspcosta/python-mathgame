@@ -4,7 +4,6 @@ fileName = 'userScore.txt'
 tmpFile = 'userScore.tmp'
 
 try:
-    #searchUser = str(input("Insert the name that you want:"))
 
     def getUserPoint(userName):
         f = open(fileName, 'r')
@@ -25,6 +24,34 @@ try:
             if counter == True:
                 break
                 
+        if counter == False:
+            print("Sorry, name not found :( ")
+
+        f.close()
+
+    def setUserPoint(userName):
+        f = open(fileName, 'r')
+        results = f.readlines()
+
+        counter = False
+
+        newResult = 0
+        
+        for result in results:
+            splitado = result.split(',')
+            for innerResult in splitado:
+                if counter == True:
+                    newResult = int(innerResult)
+                    break
+
+                if innerResult == userName:
+                    counter = True
+                    continue
+            if counter == True:
+                break
+
+        return newResult    
+
         if counter == False:
             print("Sorry, name not found :( ")
 
@@ -90,10 +117,6 @@ try:
             print(stringScores.format(idx+1, userArray, scoreArray))
 
         f.close()
-
-    #getUserPoint(searchUser)
-
-    #updateUserPoints(False, 'Damiao', 1055)
 
 except IOError:
     print("Sorry, file not found! We will create one for you! Try again after")
