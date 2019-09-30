@@ -8,9 +8,9 @@ This is a simple math game wrote in Python, using an archive .txt as "Data Stora
 ## Running the application
 Simply run the following command: 
 
-``
+```
 python main.py
 
-``
+```
 
 Run it inside the downloaded folder to execute the main program. You only need python v3 or later to run the program.
