@@ -95,7 +95,6 @@ try:
             
             inputFile.close()
             outputFile.close()
-
             os.remove(fileName)
             os.rename(tmpFile,fileName)
 
